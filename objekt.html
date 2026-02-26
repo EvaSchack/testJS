@@ -12,23 +12,41 @@
     </main>
 
     <script>
-      const person = {
-        navn: "Ole Hansen",
-        cpr: "061103-1234",
-        email: "ole@ole.dk",
-      };
+      const personer = [
+        {
+          navn: "Ole Hansen",
+          cpr: "061103-1234",
+          email: "ole@ole.dk",
+          børn: ["Sonja", "Nynne"],
+        },
+        {
+          navn: "Lise Jensen",
+          cpr: "150203-5678",
+          email: "lise@lise.dk",
+          børn: ["Maren", "Aske"],
+        },
+        {
+          navn: "Mette Nielsen",
+          cpr: "220405-9012",
+          email: "mette@mette.dk",
+          børn: ["Hubert", "Lucia"],
+        },
+      ];
 
       const personliste = document.querySelector("#personliste");
 
       function showPerson() {
-        console.log(person);
-        personliste.innerHTML = `
-         <article>
-          <h2>${person.navn}</h2>
-          <p>${person.cpr}</p>
-          <p>${person.email}</p>
-        </article>
-        `;
+        console.log(personer[0].email);
+        personer.forEach((person) => {
+          personliste.innerHTML += `
+          <article>
+           <h2>navn: ${person.navn}</h2>
+           <p>cpr: ${person.cpr}</p>
+           <p>email: ${person.email}</p>
+           <p>børn: ${person.børn.join(", ")}</p>
+         </article>
+         `;
+        });
       }
 
       showPerson();
