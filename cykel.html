@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <h1>cykel Information</h1>
+  <body>
+    <main>
+      <section id="cykelliste"></section>
+    </main>
+
+    <script>
+      const cykel = {
+        mærke: "Damecykel",
+        model: "Domane SL 7",
+        farve: "Rød",
+      };
+
+      const cykelliste = document.querySelector("#cykelliste");
+
+      function showCykel() {
+        console.log(cykel);
+
+        cykelliste.innerHTML = `
+        <h2>Mærke: ${cykel.mærke}</h2>
+        <p>Model: ${cykel.model}</p>
+        <p>Farve: ${cykel.farve}</p>
+      `;
+      }
+      showCykel();
+    </script>
+  </body>
+</html>

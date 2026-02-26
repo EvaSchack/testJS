@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <h1>Person Information</h1>
+  <body>
+    <main>
+      <section id="personliste"></section>
+    </main>
+
+    <script>
+      const person = {
+        navn: "Ole Hansen",
+        cpr: "061103-1234",
+        email: "ole@ole.dk",
+      };
+
+      const personliste = document.querySelector("#personliste");
+
+      function showPerson() {
+        console.log(person);
+        personliste.innerHTML = `
+         <article>
+          <h2>${person.navn}</h2>
+          <p>${person.cpr}</p>
+          <p>${person.email}</p>
+        </article>
+        `;
+      }
+
+      showPerson();
+    </script>
+  </body>
+</html>
